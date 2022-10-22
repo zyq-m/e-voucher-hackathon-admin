@@ -4,6 +4,7 @@ import listbarIcon from "./icons/listbar.png";
 import logoutIcon from "./icons/logout.png";
 import backbuttonIcon from "./icons/backbutton.png";
 import logo from "./logo-unisza.png";
+import icon from "./icon.png";
 
 export {
   emailIcon,
@@ -12,4 +13,5 @@ export {
   logoutIcon,
   backbuttonIcon,
   logo,
+  icon,
 };

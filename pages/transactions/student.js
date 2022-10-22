@@ -29,7 +29,7 @@ const transactions = () => {
 
   return (
     <Layout>
-      <div className="w-2/3 items-center">
+      <div className="w-2/3 items-center py-8">
         <h1 className="mb-[30px] font-bold text-3xl">
           Transactions List (Students)
         </h1>

@@ -15,7 +15,7 @@ const login = () => {
   const [password, setPassword] = useState("");
   const { store } = useLocalStorage();
 
-  const handleLogin = (e) => {
+  const handleLogin = e => {
     e.preventDefault();
 
     instance
@@ -23,13 +23,13 @@ const login = () => {
         email: email,
         password: password,
       })
-      .then((res) => {
+      .then(res => {
         store("accessToken", res.data.accessToken);
         store("refreshToken", res.data.refreshToken);
 
         router.push("/dashboard");
       })
-      .catch((err) => {
+      .catch(err => {
         if (err.response.status) {
           return alert("Wrong email or password");
         }
@@ -37,10 +37,7 @@ const login = () => {
   };
 
   return (
-    <div className="login min-h-screen grid place-items-center grid-rows-[max-content_1fr] bg-[#FFF7D9]">
-      <div className="justify-self-start">
-        <img className="w-[13rem]" src={logo.src} alt="" />
-      </div>
+    <div className="login min-h-screen grid place-items-center bg-[#FFF7D9]">
       <div>
         <div className="p-9 rounded-2xl shadow-md bg-white w-[35rem]">
           <h1 className="mb-8 font-bold text-4xl text-center">Welcome Back</h1>
@@ -54,7 +51,7 @@ const login = () => {
               <Input
                 type="email"
                 value={email}
-                onAction={(e) => setEmail(e.target.value)}
+                onAction={e => setEmail(e.target.value)}
                 placeholder="Enter Your Email..."
               />
               <img
@@ -65,7 +62,7 @@ const login = () => {
               <Input
                 type="password"
                 value={password}
-                onAction={(e) => setPassword(e.target.value)}
+                onAction={e => setPassword(e.target.value)}
                 placeholder="Enter Your Password..."
               />
             </div>
@@ -76,9 +73,7 @@ const login = () => {
             </div>
           </form>
         </div>
-        <p className="text-center mt-4">
-          Copyright @unisza2022 | Privacy Policy
-        </p>
+        <p className="text-center mt-4">Copyright @Giga Js | Privacy Policy</p>
       </div>
     </div>
   );
